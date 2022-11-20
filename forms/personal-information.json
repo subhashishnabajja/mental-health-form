@@ -1,0 +1,22 @@
+{
+    "name": {
+        "label": "Name",
+        "name": "name",
+        "placeholder": "Enter your name",
+        "type": "text"
+    },
+    "email": {
+        "label": "Email",
+        "name": "email",
+        "placeholder": "Enter your email",
+        "type": "email"
+    },
+    "age": {
+        "label": "Age",
+        "name": "age",
+        "placeholder": "Enter your age",
+        "type": "number",
+        "min": 1,
+        "max": 100
+    }
+}

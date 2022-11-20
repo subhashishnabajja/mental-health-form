@@ -1,0 +1,209 @@
+{
+    "q1": {
+        "type": "radio",
+        "label": "Little interest or pleasure in doing things",
+        "name": "Little interest or pleasure in doing things",
+        "options": [
+            {
+                "value": 0,
+                "label": "Not at all."
+            },
+            {
+                "value": 1,
+                "label": "Several Days"
+            },
+            {
+                "value": 2,
+                "label": "More than half days."
+            },
+            {
+                "value": 3,
+                "label": "Nearly every days."
+            }
+        ]
+    },
+    "q3": {
+        "type": "radio",
+        "label": "Feeling down, depressed, or hopeless",
+        "name": "Feeling down, depressed, or hopeless",
+        "options": [
+            {
+                "value": 0,
+                "label": "Not at all."
+            },
+            {
+                "value": 1,
+                "label": "Several Days"
+            },
+            {
+                "value": 2,
+                "label": "More than half days."
+            },
+            {
+                "value": 3,
+                "label": "Nearly every days."
+            }
+        ]
+    },
+    "q4": {
+        "type": "radio",
+        "label": "Feeling tired or having little energy",
+        "name": "Feeling tired or having little energy",
+        "options": [
+            {
+                "value": 0,
+                "label": "Not at all."
+            },
+            {
+                "value": 1,
+                "label": "Several Days"
+            },
+            {
+                "value": 2,
+                "label": "More than half days."
+            },
+            {
+                "value": 3,
+                "label": "Nearly every days."
+            }
+        ]
+    },
+    "q5": {
+        "type": "radio",
+        "label": "Poor Appetite",
+        "name": "Poor Appetite",
+        "options": [
+            {
+                "value": 0,
+                "label": "Not at all."
+            },
+            {
+                "value": 1,
+                "label": "Several Days"
+            },
+            {
+                "value": 2,
+                "label": "More than half days."
+            },
+            {
+                "value": 3,
+                "label": "Nearly every days."
+            }
+        ]
+    },
+    "q6": {
+        "type": "radio",
+        "label": "Over eating",
+        "name": "Over eating",
+        "options": [
+            {
+                "value": 0,
+                "label": "Not at all."
+            },
+            {
+                "value": 1,
+                "label": "Several Days"
+            },
+            {
+                "value": 2,
+                "label": "More than half days."
+            },
+            {
+                "value": 3,
+                "label": "Nearly every days."
+            }
+        ]
+    },
+    "q7": {
+        "type": "radio",
+        "label": "Feeling bad about yourself or that you are a failure or have let yourself or your family down",
+        "name": "Feeling bad about yourself or that you are a failure or have let yourself or your family down",
+        "options": [
+            {
+                "value": 0,
+                "label": "Not at all."
+            },
+            {
+                "value": 1,
+                "label": "Several Days"
+            },
+            {
+                "value": 2,
+                "label": "More than half days."
+            },
+            {
+                "value": 3,
+                "label": "Nearly every days."
+            }
+        ]
+    },
+    "q8": {
+        "type": "radio",
+        "label": "Trouble concentrating on things, such as reading the newspaper or watching television",
+        "name": "Trouble concentrating on things, such as reading the newspaper or watching television",
+        "options": [
+            {
+                "value": 0,
+                "label": "Not at all."
+            },
+            {
+                "value": 1,
+                "label": "Several Days"
+            },
+            {
+                "value": 2,
+                "label": "More than half days."
+            },
+            {
+                "value": 3,
+                "label": "Nearly every days."
+            }
+        ]
+    },
+    "q9": {
+        "type": "radio",
+        "label": "Moving or speaking so slowly that other people could have noticed. Or the opposite being so figety or restless that you have been moving around a lot more than usual",
+        "name": "Moving or speaking so slowly that other people could have noticed. Or the opposite being so figety or restless that you have been moving around a lot more than usual",
+        "options": [
+            {
+                "value": 0,
+                "label": "Not at all."
+            },
+            {
+                "value": 1,
+                "label": "Several Days"
+            },
+            {
+                "value": 2,
+                "label": "More than half days."
+            },
+            {
+                "value": 3,
+                "label": "Nearly every days."
+            }
+        ]
+    },
+    "q10": {
+        "type": "radio",
+        "label": "Thoughts that you would be better off dead, or of hurting yourself",
+        "name": "Thoughts that you would be better off dead, or of hurting yourself",
+        "options": [
+            {
+                "value": 0,
+                "label": "Not at all."
+            },
+            {
+                "value": 1,
+                "label": "Several Days"
+            },
+            {
+                "value": 2,
+                "label": "More than half days."
+            },
+            {
+                "value": 3,
+                "label": "Nearly every days."
+            }
+        ]
+    }
+}
