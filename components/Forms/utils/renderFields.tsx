@@ -1,3 +1,5 @@
+import NumberInput from "../../NumberInput";
+import TextInput from "../../TextInput";
 import { JSONForm } from "../types";
 
 export function renderFields(json: JSONForm, formik: any) {
@@ -36,35 +38,49 @@ export function renderFields(json: JSONForm, formik: any) {
 
     if (element["type"] === "text" || element["type"] === "email") {
       _renderedFields.push(
-        <div key={element["label"]}>
-          <label>{element["label"]}</label>
-          <div>
-            <input
-              type={element["type"]}
-              value={formik.values[element["name"]]}
-              name={element["name"]}
-              placeholder={element["placeholder"]}
-              onChange={formik.handleChange}
-            />
-          </div>
-        </div>
+        <TextInput
+          label={element["label"]}
+          name={element["name"]}
+          value={formik.values[element["name"]]}
+          onChange={formik.handleChange}
+          placeholder={element["placeholder"]}
+        />
+        // <div key={element["label"]}>
+        //   <label>{element["label"]}</label>
+        //   <div>
+        //     <input
+        //       type={element["type"]}
+        //       value={formik.values[element["name"]]}
+        //       name={element["name"]}
+        //       placeholder={element["placeholder"]}
+        //       onChange={formik.handleChange}
+        //     />
+        //   </div>
+        // </div>
       );
     }
 
     if (element["type"] === "number") {
       _renderedFields.push(
-        <div key={element["label"]}>
-          <label>{element["label"]}</label>
-          <div>
-            <input
-              type={element["type"]}
-              value={formik.values[element["name"]]}
-              name={element["name"]}
-              placeholder={element["placeholder"]}
-              onChange={formik.handleChange}
-            />
-          </div>
-        </div>
+        <NumberInput
+          label={element["label"]}
+          name={element["name"]}
+          value={formik.values[element["name"]]}
+          onChange={formik.handleChange}
+          placeholder={element["placeholder"]}
+        />
+        // <div key={element["label"]}>
+        //   <label>{element["label"]}</label>
+        //   <div>
+        //     <input
+        //       type={element["type"]}
+        //       value={formik.values[element["name"]]}
+        //       name={element["name"]}
+        //       placeholder={element["placeholder"]}
+        //       onChange={formik.handleChange}
+        //     />
+        //   </div>
+        // </div>
       );
     }
   });

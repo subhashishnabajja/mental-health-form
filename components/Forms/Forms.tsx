@@ -33,7 +33,11 @@ export function Forms(props: FormsProps) {
     setForms((forms) => {
       const newForms = forms;
 
-      newForms[label] = { index: count.current, data: {} };
+      newForms[label] = {
+        index: count.current,
+        active: Object.keys(forms).length === 0,
+        data: {},
+      };
       count.current++; // Increment the counter
 
       return newForms;
@@ -53,8 +57,10 @@ export function Forms(props: FormsProps) {
   }, []);
 
   const nextForm = useCallback(() => {
-    setActiveForm((curr) => Math.min(curr + 1, Object.keys(forms).length - 1));
-  }, []);
+    setActiveForm((curr) => {
+      return Math.min(curr + 1, Object.keys(forms).length - 1);
+    });
+  }, [forms]);
 
   const prevForm = useCallback(() => {
     setActiveForm((curr) => Math.max(0, curr - 1));
@@ -82,6 +88,7 @@ export function Forms(props: FormsProps) {
     <FormContext.Provider
       value={{
         registerForm,
+        forms,
         unregisterForm,
         activeForm,
         nextForm,
@@ -93,8 +100,6 @@ export function Forms(props: FormsProps) {
       }}
     >
       {props.children}
-      <button onClick={() => nextForm()}>Next</button>
-      <button onClick={() => prevForm()}>Prev</button>
     </FormContext.Provider>
   );
 }

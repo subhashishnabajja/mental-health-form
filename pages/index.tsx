@@ -2,6 +2,8 @@ import { Form, Forms } from "../components/Forms";
 import { JSONForm } from "../components/Forms/types";
 import personalInformation from "../forms/personal-information.json";
 import personalHealthQuestionare from "../forms/personal-health-questionare.json";
+import { Button, Typography } from "@mui/material";
+import Box from "@mui/system/Box";
 
 export default function Home() {
   return (
@@ -12,11 +14,23 @@ export default function Home() {
       >
         {(fields, helpers) => {
           return (
-            <div>
-              Form onReset
+            <>
+              <Box
+                sx={{
+                  mb: 3,
+                  background: "white",
+                  px: 3,
+                  py: 4,
+                  borderRadius: 2,
+                }}
+              >
+                <Typography variant="h4">Personal information</Typography>
+              </Box>
               {fields}
-              <button onClick={helpers.submitForm}>Submit</button>
-            </div>
+              <Button variant="contained" onClick={helpers.submitForm}>
+                Submit
+              </Button>
+            </>
           );
         }}
       </Form>

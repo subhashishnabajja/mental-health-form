@@ -14,6 +14,7 @@ export interface FormContext {
   updateFormData: (label: string, data: {}) => void;
   handleFinalSubmission: () => void;
   isActive: (label: string) => boolean;
+  forms: { [key: string]: FormType };
 }
 
 export interface FormProps {
@@ -27,6 +28,7 @@ export interface FormProps {
 
 export interface FormType {
   index: number;
+  active: boolean;
   data: {};
 }
 
