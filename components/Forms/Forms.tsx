@@ -17,6 +17,17 @@ export function Forms(props: FormsProps) {
 
   const [activeForm, setActiveForm] = useState(0); // Track the current active form
 
+  const isActive = useCallback(
+    (label: string) => {
+      if (forms[label] && forms[label].index === activeForm) {
+        return true;
+      }
+
+      return false;
+    },
+    [activeForm, forms]
+  );
+
   // Register form on mount
   const registerForm = useCallback((label: string) => {
     setForms((forms) => {
@@ -51,7 +62,11 @@ export function Forms(props: FormsProps) {
 
   const isLastForm = useCallback(() => {
     return activeForm === Object.keys(forms).length - 1;
-  }, []);
+  }, [forms, activeForm]);
+
+  const handleFinalSubmission = () => {
+    props.onSubmit(forms);
+  };
 
   const updateFormData = useCallback((label: string, data: {}) => {
     setForms((forms) => {
@@ -73,6 +88,8 @@ export function Forms(props: FormsProps) {
         prevForm,
         isLastForm,
         updateFormData,
+        handleFinalSubmission,
+        isActive,
       }}
     >
       {props.children}

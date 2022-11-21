@@ -13,6 +13,8 @@ export function Form(props: FormProps) {
     activeForm,
     isLastForm,
     updateFormData,
+    handleFinalSubmission,
+    isActive,
   } = useFormContext();
 
   const initialValues = useMemo(() => getInitialValues(props.render), []);
@@ -23,9 +25,7 @@ export function Form(props: FormProps) {
       console.log(values);
       updateFormData(props.label, values);
 
-      if (isLastForm()) {
-        console.log("Should submit");
-      }
+      if (isLastForm()) handleFinalSubmission();
     },
   });
 
@@ -45,6 +45,7 @@ export function Form(props: FormProps) {
       onSubmit={formik.handleSubmit}
       onReset={formik.handleReset}
       onBlur={formik.handleBlur}
+      style={{ display: !isActive(props.label) ? "none" : "initial" }}
     >
       {activeForm}
       {props.children(renderFields(props.render, formik), formik)}

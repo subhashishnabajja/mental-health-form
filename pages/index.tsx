@@ -29,6 +29,7 @@ export default function Home() {
             <div>
               Form onReset
               {fields}
+              <button onClick={helpers.submitForm}>Submit</button>
             </div>
           );
         }}

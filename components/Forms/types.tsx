@@ -12,6 +12,8 @@ export interface FormContext {
   prevForm: () => void;
   isLastForm: () => boolean;
   updateFormData: (label: string, data: {}) => void;
+  handleFinalSubmission: () => void;
+  isActive: (label: string) => boolean;
 }
 
 export interface FormProps {
