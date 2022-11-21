@@ -93,8 +93,8 @@ export function Forms(props: FormsProps) {
       }}
     >
       {props.children}
-      <button onClick={() => nextForm()}>Next</button>
       <button onClick={() => prevForm()}>Prev</button>
+      <button onClick={() => nextForm()}>Next</button>
     </FormContext.Provider>
   );
 }
