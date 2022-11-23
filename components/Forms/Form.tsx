@@ -1,5 +1,6 @@
+import Box from "@mui/material/Box";
 import { useFormik } from "formik";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useFormContext } from "./Forms";
 import { FormProps } from "./types";
 import { getInitialValues } from "./utils/getInitialValues";
@@ -8,16 +9,20 @@ import { renderFields } from "./utils/renderFields";
 // Render form using formik and json
 export function Form(props: FormProps) {
   const {
+    forms,
     registerForm,
+
     unregisterForm,
     activeForm,
     isLastForm,
     updateFormData,
     handleFinalSubmission,
     isActive,
+    nextForm,
   } = useFormContext();
 
   const initialValues = useMemo(() => getInitialValues(props.render), []);
+  const [visible, setVisible] = useState(false);
 
   const formik = useFormik({
     initialValues,
@@ -25,7 +30,11 @@ export function Form(props: FormProps) {
       console.log(values);
       updateFormData(props.label, values);
 
-      if (isLastForm()) handleFinalSubmission();
+      if (isLastForm()) {
+        handleFinalSubmission();
+      }
+
+      nextForm();
     },
   });
 
@@ -40,15 +49,26 @@ export function Form(props: FormProps) {
     return () => unregisterForm(props.label);
   }, []);
 
+  useEffect(() => {
+    setVisible(forms[props.label].index === activeForm);
+  }, [activeForm]);
+
   return (
-    <form
-      onSubmit={formik.handleSubmit}
-      onReset={formik.handleReset}
-      onBlur={formik.handleBlur}
-      style={{ display: !isActive(props.label) ? "none" : "initial" }}
+    <Box
+      sx={{
+        px: 3,
+        py: 2,
+        borderRadius: 2,
+        display: visible ? "block" : "none",
+      }}
     >
-      {activeForm}
-      {props.children(renderFields(props.render, formik), formik)}
-    </form>
+      <form
+        onSubmit={formik.handleSubmit}
+        onReset={formik.handleReset}
+        onBlur={formik.handleBlur}
+      >
+        {props.children(renderFields(props.render, formik), formik)}
+      </form>
+    </Box>
   );
 }
