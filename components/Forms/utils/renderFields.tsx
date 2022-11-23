@@ -35,6 +35,7 @@ export function renderFields(json: JSONForm, formik: any) {
         </div>
       );
     }
+    
 
     if (element["type"] === "text" || element["type"] === "email") {
       _renderedFields.push(
